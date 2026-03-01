@@ -117,6 +117,8 @@ To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"temperature_sensor_select": NEW_VALUE}`.
 The possible values are: `internal`, `external`, `external_2`, `external_3`.
 
+Note: values `external_2` and `external_3` are set by firmware and part of a Fail-safe Mode. For detailed explanation please consult [this issue](https://github.com/Koenkk/zigbee2mqtt/discussions/29546#discussioncomment-14994324).
+
 ### External temperature (numeric)
 The value of an external temperature sensor. Note: synchronisation of this value with the external temperature sensor needs to happen outside of Zigbee2MQTT..
 Value can be found in the published state on the `external_temperature_input` property.
@@ -230,4 +232,3 @@ Value can be found in the published state on the `smart_temperature_control` pro
 To read (`/get`) the value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/get` with payload `{"smart_temperature_control": ""}`.
 To write (`/set`) a value publish a message to topic `zigbee2mqtt/FRIENDLY_NAME/set` with payload `{"smart_temperature_control": NEW_VALUE}`.
 If value equals `true` smart temperature control is ON, if `false` OFF.
-
